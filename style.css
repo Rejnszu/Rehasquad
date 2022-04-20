@@ -1,0 +1,995 @@
+/*
+Theme Name: RehaSquad
+Text Domain: RehaSquad
+Version: 1.0
+Description: RehaSquad
+Author: Piotr Brokowski & Łukasz Rejnsz
+
+*/
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body {
+  text-align: justify;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+div.landing {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #ffffff;
+  background-position: center;
+  align-content: center;
+  color: white;
+}
+
+/* ================================================================================================= Navigation start ==================================================================   */
+img.logo {
+  height: 7.5rem;
+  margin-left: 1rem;
+}
+.upper-menu {
+  background-color: white;
+}
+.upper-menu .fab,
+.upper-menu .fas {
+  font-size: 2rem;
+}
+
+.menu-container {
+  background-color: white;
+}
+.upper-menu a {
+  text-decoration: none;
+  color: #000000;
+}
+.dropdown-item {
+  padding: 2rem 0.7rem 2rem 0.7rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+ul.navbar-nav li.nav-item.dropdown:hover > div.dropdown-menu {
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-collapse {
+    display: block !important;
+  }
+}
+/* ================================================================================================= Navigation end ==================================================================   */
+/* ================================================================================================= Mobile Navigation start ==================================================================   */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  background-color: rgba(162, 166, 177, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-radius: 0 0 3px 3px;
+}
+
+.sidebar a {
+  text-align: left;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  color: #000000;
+  display: block;
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.sidebar_a {
+  margin-left: 3rem;
+  padding: 8px 8px 8px 32px;
+}
+.sidebar_a:hover,
+.sidebar_a:focus {
+  color: #f1f1f1;
+  transform: scale(1.5);
+  margin-left: 3.5rem;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: -0.5rem;
+  right: 0.7rem;
+  font-size: 6rem;
+  margin-left: 50px;
+  transform: scale(1);
+  transition: all 0.2s;
+  z-index: 100000;
+}
+.sidebar .closebtn:hover {
+  transform: scale(1.1);
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+body.sidebarOpen {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#mobile-fa-caret-up {
+  display: none;
+}
+/* ================================================================================================= Mobile Navigation end ==================================================================   */
+
+/* //////////////////// */
+/* Navigacja */
+
+.nav-link {
+  margin: 0.5rem 1rem;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 10;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 3px;
+  transform: scaleY(0);
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0.23, 0.59, 0.5) 0.1s,
+    background-color 0.1s;
+  z-index: -1;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: rgb(255, 255, 255);
+}
+
+.nav-link:hover::before,
+.nav-link:focus::before {
+  transform: scaleY(1);
+  width: 100%;
+}
+i.fas.fa-bars::before {
+  font-size: 3rem;
+}
+.topmenu-margin a {
+  padding: 0rem 2rem;
+}
+.topmenu-margin:last-child {
+  padding-right: 0;
+}
+.topmenu-margin span {
+  padding-left: 0.5rem;
+}
+/*=================================================================== Nav Dropodown ========================================================================*/
+.dropdown-item:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.dropdown-menu-own {
+  margin: 0;
+  padding: 0;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin-left: 1rem;
+}
+.sidebar_dropdown {
+  display: none;
+  overflow: hidden;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.dropdown-item-sidebar:hover,
+.dropdown-item-sidebar:focus {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+/* IMG UNDER NAVBAR */
+.img_personal {
+  margin-top: 9.5rem;
+  max-width: 100%;
+  height: auto;
+}
+.photo {
+  /* background-image: linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.6) 30%,
+      transparent 31%
+    ),url("assets/testowy.jpg"); */
+  background-image: url("assets/fizjokontakt.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-content: center;
+  width: 100%;
+  height: 25vh;
+}
+
+/* Utilities */
+.margin-top-large {
+  margin-top: 15rem;
+}
+.margin-top-10 {
+  margin-top: 8.1rem;
+}
+.margin-top-medium {
+  margin-top: 5rem;
+}
+.margin-top-small {
+  margin-top: 3rem;
+}
+.margin-bottom-large {
+  margin-bottom: 10rem;
+}
+.margin-bottom-medium {
+  margin-bottom: 5rem;
+}
+.border-gradient {
+  border-bottom: solid 3px;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(0, 84, 17, 0.7) 0%,
+    rgba(10, 30, 147, 0.7) 50%,
+    rgba(222, 29, 88, 0.7) 100%
+  );
+  border-image-slice: 1;
+}
+
+.border-bottom {
+  border-bottom: 2px solid grey;
+}
+
+/* OFERTA */
+.uslugi_tytul {
+  display: inline-block;
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.oferta_tekst {
+  color: black;
+}
+.oferta_h2 {
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.oferta_p {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+.uslugi_before::before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 0;
+  width: 3px;
+  background-color: blue;
+  top: 0px;
+  left: -4px;
+  transition: all 0.2s;
+}
+.uslugi_before:hover::before {
+  height: 100%;
+}
+.uslugi_after::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background-color: blue;
+  top: 0;
+  left: -1px;
+  transition: all 0.2s;
+}
+.uslugi_after:hover::after {
+  width: 100%;
+}
+
+/* OFERTA Collapses */
+.card-link {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+
+  transition: all 0.2s;
+}
+.card-link:hover {
+  color: rgb(0, 0, 0);
+}
+.card-body {
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+/* O MNIE*/
+.text-with-header h2 {
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  font-weight: 600;
+}
+.text-with-header p {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+/* O MNIE GALERIA */
+.photo-gallery {
+  color: #313437;
+  background-color: #fff;
+}
+
+.photo-gallery p {
+  font-size: 1.5rem;
+  color: #7d8285;
+}
+
+.photo-gallery h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width: 767px) {
+  .photo-gallery h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.photo-gallery .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.photo-gallery .intro p {
+  margin-bottom: 0;
+  color: black;
+}
+
+.photo-gallery .photos {
+  padding-bottom: 20px;
+}
+
+.photo-gallery .item {
+  padding-bottom: 30px;
+}
+
+/* TIMELINE */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: #333;
+}
+
+header h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+header p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.hexa {
+  border: 0px;
+  float: left;
+  text-align: center;
+  height: 35px;
+  width: 60px;
+  font-size: 22px;
+  background: #f0f0f0;
+  color: #3c3c3c;
+  position: relative;
+  margin-top: 15px;
+}
+
+.hexa:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid #f0f0f0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  top: -15px;
+}
+
+.hexa:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 15px solid #f0f0f0;
+  bottom: -15px;
+}
+
+.timeline {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  content: " ";
+  display: block;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  background: rgb(213, 213, 213);
+  background: -moz-linear-gradient(
+    top,
+    rgba(213, 213, 213, 0) 0%,
+    rgb(213, 213, 213) 8%,
+    rgb(213, 213, 213) 92%,
+    rgba(213, 213, 213, 0) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(30, 87, 153, 1)),
+    color-stop(100%, rgba(125, 185, 232, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(213, 213, 213, 0) 0%,
+    rgb(213, 213, 213) 8%,
+    rgb(213, 213, 213) 92%,
+    rgba(213, 213, 213, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(213, 213, 213, 0) 0%,
+    rgb(213, 213, 213) 8%,
+    rgb(213, 213, 213) 92%,
+    rgba(213, 213, 213, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(213, 213, 213, 0) 0%,
+    rgb(213, 213, 213) 8%,
+    rgb(213, 213, 213) 92%,
+    rgba(213, 213, 213, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 213, 213, 0) 0%,
+    rgb(213, 213, 213) 8%,
+    rgb(213, 213, 213) 92%,
+    rgba(213, 213, 213, 0) 100%
+  );
+  z-index: 5;
+}
+
+.timeline li {
+  padding: 2em 0;
+}
+
+.timeline .hexa {
+  width: 16px;
+  height: 10px;
+  position: absolute;
+  background: #000000;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -30px;
+  margin-top: 0;
+}
+
+.timeline .hexa:before {
+  border-bottom: 4px solid #000000;
+  border-left-width: 8px;
+  border-right-width: 8px;
+  top: -4px;
+}
+
+.timeline .hexa:after {
+  border-left-width: 8px;
+  border-right-width: 8px;
+  border-top: 4px solid #000000;
+  bottom: -4px;
+}
+
+.direction-l,
+.direction-r {
+  float: none;
+  width: 100%;
+  text-align: center;
+}
+
+.flag-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: rgb(255, 255, 255);
+  font-weight: 600;
+  z-index: 15;
+  padding: 6px 10px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.direction-l .flag:after,
+.direction-r .flag:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  height: 0;
+  width: 0;
+  margin-left: -8px;
+  border: solid transparent;
+  border-bottom-color: rgb(255, 255, 255);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.direction-l .flag {
+  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.direction-r .flag {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.time-wrapper {
+  display: block;
+  position: relative;
+  margin: 4px 0 0 0;
+  z-index: 14;
+  line-height: 1em;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.direction-l .time-wrapper {
+  float: none;
+}
+
+.direction-r .time-wrapper {
+  float: none;
+}
+
+.time {
+  background: #000000;
+  display: inline-block;
+  padding: 8px;
+}
+
+.desc {
+  position: relative;
+  margin: 1em 0 0 0;
+  padding: 1em;
+  background: rgb(254, 254, 254);
+  font-size: 1.5rem;
+  font-weight: 600;
+  z-index: 15;
+}
+
+.direction-l .desc,
+.direction-r .desc {
+  position: relative;
+  margin: 1em 1em 0 1em;
+  padding: 1em;
+  z-index: 15;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    width: 660px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .timeline li:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .timeline .hexa {
+    left: -28px;
+    right: auto;
+    top: 8px;
+  }
+
+  .timeline .direction-l .hexa {
+    left: auto;
+    right: -28px;
+  }
+
+  .direction-l {
+    position: relative;
+    width: 310px;
+    float: left;
+    text-align: right;
+  }
+
+  .direction-r {
+    position: relative;
+    width: 310px;
+    float: right;
+    text-align: left;
+  }
+
+  .flag-wrapper {
+    display: inline-block;
+  }
+
+  .flag {
+    font-size: 18px;
+  }
+
+  .direction-l .flag:after {
+    left: auto;
+    right: -16px;
+    top: 50%;
+    margin-top: -8px;
+    border: solid transparent;
+    border-left-color: rgb(254, 254, 254);
+    border-width: 8px;
+  }
+
+  .direction-r .flag:after {
+    top: 50%;
+    margin-top: -8px;
+    border: solid transparent;
+    border-right-color: rgb(254, 254, 254);
+    border-width: 8px;
+    left: -8px;
+  }
+
+  .time-wrapper {
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  .direction-l .time-wrapper {
+    float: left;
+  }
+
+  .direction-r .time-wrapper {
+    float: right;
+  }
+
+  .time {
+    padding: 5px 10px;
+  }
+
+  .direction-r .desc {
+    margin: 1em 0 0 0.75em;
+  }
+}
+
+@media (min-width: 992px) {
+  .timeline {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .direction-l {
+    position: relative;
+    width: 380px;
+    float: left;
+    text-align: right;
+  }
+
+  .direction-r {
+    position: relative;
+    width: 380px;
+    float: right;
+    text-align: left;
+  }
+}
+
+/* HEXAGONY */
+
+.hexagon {
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+  height: 5rem;
+  min-width: 5rem;
+  margin-top: 3.5rem;
+}
+.hexagon--1 {
+  background-color: rgba(19, 179, 19, 0.6);
+  color: rgba(19, 179, 19, 0.6);
+}
+.hexagon--2 {
+  background-color: rgba(0, 0, 255, 0.6);
+  color: rgba(0, 0, 255, 0.6);
+}
+.hexagon--3 {
+  background-color: rgba(148, 31, 103, 0.6);
+  color: rgba(148, 31, 103, 0.6);
+}
+.hexagon:before {
+  position: absolute;
+  content: "";
+}
+.hexagon:before {
+  top: 2px; /* border width */
+  left: 2px; /* border width */
+  height: calc(100% - 4px); /* 100% - (2 * border width) */
+  width: calc(100% - 4px); /* 100% - (2 * border width) */
+  background: rgb(255, 255, 255);
+}
+.hexagon,
+.hexagon:before {
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: inherit;
+  z-index: 100000;
+}
+.text {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+/* KONTAKT */
+/* TEST */
+
+/* CENNIK TABLE */
+.table {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*========================================================= FOOTER======================================================================================= */
+.footer h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+.footer {
+  background-color: rgb(0, 0, 0);
+}
+
+.table--stopka {
+  color: white;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+.list li {
+  margin: 0.5rem 0;
+}
+
+.list a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  padding-left: 0;
+  transition: all 0.2s;
+}
+.list a:hover {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+.bordered {
+  border-bottom: solid 1px white;
+}
+.footer {
+  color: white;
+  font-size: 2rem;
+}
+/*========================================================= FOOTER ends ======================================================================================= */
+
+/*========================================================= kontakt ======================================================================================= */
+.kontakt-container-map > iframe {
+  width: 100%;
+}
+
+/*========================================================= kontakt ends ======================================================================================= */
+
+/* Kontakt */
+.table-kontakt {
+  color: black;
+}
+.bordered-kontakt {
+  border-bottom: solid 1px rgb(0, 0, 0);
+}
+
+.godziny-kontakt {
+  margin: 0 5rem;
+}
+.container-kontakt {
+  color: black;
+  font-size: 2rem;
+}
+.container-kontakt h1 {
+  padding: 2rem 0;
+  font-weight: 600;
+}
+.container-kontakt h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.col-border {
+  border-right: rgba(0, 0, 0, 0.562) solid 2px;
+  padding-right: 3rem;
+}
+.list-kontakt {
+  list-style: none;
+  padding: 0;
+}
+.list-kontakt li {
+  margin: 0.5rem 0;
+}
+
+.list-kontakt a {
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  padding-left: 0;
+  transition: all 0.2s;
+}
+.list-kontakt a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+.photo-kontakt {
+  /* background-image: linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.6) 30%,
+      transparent 31%
+    ),url("assets/testowy.jpg"); */
+  background-image: url("assets/fizjokontakt.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-content: center;
+  width: 100%;
+  height: 25vh;
+}
+/* ==================================== Alerty ====================================================== */
+.modal-body {
+  font-size: 1.5rem;
+}
+
+.modal-footer > button {
+  font-size: 1.5rem;
+}
+
+.modal-title {
+  font-size: 3rem;
+}
+
+.modal-header button span {
+  font-size: 2.5rem;
+}
+.kontakt-notka {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.table-kontakt a {
+  text-decoration: none;
+}
+.table-kontakt span {
+  color: black;
+}
+.table-kontakt span:hover {
+  color: rgb(35, 168, 17);
+}
+#medfile-register-widget {
+  margin-top: -10rem;
+}
+.medfile {
+  margin-top: 8rem;
+}
